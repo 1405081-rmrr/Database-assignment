@@ -1,31 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.4
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Dec 22, 2020 at 02:49 AM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `seva10`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ASSESSMENT`
---
 
 CREATE TABLE `ASSESSMENT` (
   `AssessmentID` int(11) NOT NULL,
@@ -34,11 +6,7 @@ CREATE TABLE `ASSESSMENT` (
   `Description` varchar(100) DEFAULT NULL,
   `DueDate` date DEFAULT NULL,
   `PossibleMarks` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `ASSESSMENT`
---
+);
 
 INSERT INTO `ASSESSMENT` (`AssessmentID`, `UnitOfferingID`, `AssessmentName`, `Description`, `DueDate`, `PossibleMarks`) VALUES
 (1, 1, 'Online Exam Demo ', 'Multiple choice quiz', '2019-03-01', 5),
@@ -243,22 +211,15 @@ INSERT INTO `ASSESSMENT` (`AssessmentID`, `UnitOfferingID`, `AssessmentName`, `D
 (200, 25, 'Assignment 2A', 'Systems Requirements Report', '2019-03-03', 40),
 (201, 25, 'Assignment 2B', 'Requirements Presentation', '2019-03-10', 50);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `COURSE`
---
 
 CREATE TABLE `COURSE` (
   `CourseCode` int(11) NOT NULL,
   `CourseName` varchar(100) NOT NULL,
   `CreditPoints` int(8) DEFAULT NULL,
   `Notes` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
---
--- Dumping data for table `COURSE`
---
 
 INSERT INTO `COURSE` (`CourseCode`, `CourseName`, `CreditPoints`, `Notes`) VALUES
 (2202321, 'Associate Degree of Information Technology', 192, 'First 2 years of B InfTech'),
@@ -278,7 +239,7 @@ CREATE TABLE `COURSE_ENROLMENT` (
   `CourseCode` int(11) NOT NULL,
   `EnrolmentDate` date DEFAULT NULL,
   `Status` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `COURSE_ENROLMENT`
@@ -336,47 +297,47 @@ CREATE TABLE `STUDENT` (
   `PostCode` varchar(100) DEFAULT NULL,
   `Phone` varchar(100) DEFAULT NULL,
   `Email` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `STUDENT`
 --
 
 INSERT INTO `STUDENT` (`StudentID`, `FirstName`, `LastName`, `Address`, `City`, `State`, `PostCode`, `Phone`, `Email`) VALUES
-(31908147, 'Zor', 'Slate', 'P.O. Box 434, 6645 Tortor St.', 'Parramatta', 'NSW', '2012', 'non.lobtis.quis@id.org', '(01) 3511 9968'),
+(31908147, 'Zor', 'Slate', 'P.O. Box 434, 6645 Tortor St.', 'Parramatta', 'NSW', '2012', '(01) 3511 9968', 'non.lobtis.quis@id.org'),
 (31908266, 'Zorita', 'Slater', 'P.O. Box 434, 6645 Tortor St.', 'Parramatta', 'NSW', '2012', '(01) 3511 9967', 'non.lobortis.quis@id.org'),
 (31971145, 'Prescott', 'Arnold', '907-2981 Vel Av.', 'Launceston', 'TAS', '6211', '(05) 8523 1610', 'erat.in@adipiscingMaurismolestie.org'),
-(31971150, 'Prescott', 'Arn', '907-2981 Vel Av.', 'Launceston', 'TAS', '6211', 'erat.in@adipiscingMaurismoltie.org', '(05) 8523 1611'),
+(31971150, 'Prescott', 'Arn', '907-2981 Vel Av.', 'Launceston', 'TAS', '6211', '(05) 8523 1611', 'erat.in@adipiscingMaurismoltie.org'),
 (31995679, 'Nissim', 'Patrick', '7350 Malesuada Rd.', 'Port Augusta', 'SA', '5122', '(08) 9790 8565', 'tristique@fringillamilacinia.org'),
-(31995680, 'Nissam', 'Patric', '7350 Malesuada Rd.', 'Port Augusta', 'SA', '5122', 'tristique@fringillamilacia.org', '(08) 9790 8566'),
+(31995680, 'Nissam', 'Patric', '7350 Malesuada Rd.', 'Port Augusta', 'SA', '5122', '(08) 9790 8566', 'tristique@fringillamilacia.org'),
 (32067540, 'Brandon', 'Barnes', 'Ap #429-7607 Id, St.', 'Mount Gambier', 'SA', '5034', '(08) 0732 9844', 'mauris.ut.mi@Nunccommodoauctor.edu'),
-(32067541, 'Brandon', 'Bars', 'Ap #429-7607 Id, St.', 'Mount Gambier', 'SA', '5034', 'mauris.ut.mi@Nuncommodoauctor.edu', '(08) 0732 9845'),
+(32067541, 'Brandon', 'Bars', 'Ap #429-7607 Id, St.', 'Mount Gambier', 'SA', '5034', '(08) 0732 9845', 'mauris.ut.mi@Nuncommodoauctor.edu'),
 (32091303, 'Nelle', 'Rocha', 'P.O. Box 842, 8685 Amet, St.', 'Morwell', 'VIC', '3242', '(02) 0899 5261', 'aliquam.iaculis@utmolestiein.com'),
-(32091304, 'Melle', 'Roha', 'P.O. Box 842, 8685 Amet, St.', 'Morwell', 'VIC', '3242', 'aliqu.iaculis@utmolestiein.com', '(02) 0899 5267'),
+(32091304, 'Melle', 'Roha', 'P.O. Box 842, 8685 Amet, St.', 'Morwell', 'VIC', '3242', '(02) 0899 5267', 'aliqu.iaculis@utmolestiein.com'),
 (32091316, 'Hedda', 'Goodman', '9212 Ultricies Road', 'Darwin', 'NT', '9033', '(07) 1223 8977', 'aliquam.adipiscing.lacus@rutrumnonhendrerit.co.uk'),
-(32091317, 'Heda', 'Gooman', '9212 Ultricies Road', 'Darwin', 'NT', '9033', 'aliquam.adipiscing.lacus@rutrumnonhe.co.uk', '(07) 1223 8976'),
+(32091317, 'Heda', 'Gooman', '9212 Ultricies Road', 'Darwin', 'NT', '9033', '(07) 1223 8976', 'aliquam.adipiscing.lacus@rutrumnonhe.co.uk'),
 (32091895, 'Imani', 'Oliver', '450-8259 Diam Ave', 'Devonport', 'TAS', '6211', '(02) 3066 8730', 'sodales@tellusid.co.uk'),
-(32091896, 'Imani', 'Oliv', '450-8259 Diam Ave', 'Devonport', 'TAS', '6211', 'sodal@tellusid.co.uk', '(02) 3066 8731'),
+(32091896, 'Imani', 'Oliv', '450-8259 Diam Ave', 'Devonport', 'TAS', '6211', '(02) 3066 8731', 'sodal@tellusid.co.uk'),
 (32095839, 'Leah', 'Larsen', 'P.O. Box 352, 3571 Integer Ave', 'Geraldton-Greenough', 'WA', '7455', '(01) 4813 1078', 'non@Nam.org'),
-(32095889, 'Leah', 'Larse', 'P.O. Box 352, 3571 Integer Ave', 'Geraldton-Greenough', 'WA', '7455', 'no@Nam.org', '(01) 4813 1079'),
+(32095889, 'Leah', 'Larse', 'P.O. Box 352, 3571 Integer Ave', 'Geraldton-Greenough', 'WA', '(01) 4813 1079', '7455', 'no@Nam.org'),
 (32100500, 'Gillian', 'Woodward', 'P.O. Box 469, 8067 Ac Rd.', 'Traralgon', 'VIC', '3177', '(03) 7527 7736', 'augue.eu.tellus@FuscefeugiatLorem.com'),
-(32100501, 'Gilli', 'Woodward', 'P.O. Box 469, 8067 Ac Rd.', 'Traralgon', 'VIC', '3177', 'augue.e.tellus@FuscefeugiatLorem.com', '(03) 7527 7738'),
+(32100501, 'Gilli', 'Woodward', 'P.O. Box 469, 8067 Ac Rd.', 'Traralgon', 'VIC', '3177', '(03) 7527 7738', 'augue.e.tellus@FuscefeugiatLorem.com'),
 (32104706, 'Melodie', 'Santiago', 'P.O. Box 814, 3690 Libero. Road', 'Warrnambool', 'VIC', '3155', '(06) 8392 3207', 'pellentesque@erateget.org'),
-(32104879, 'Melodie', 'Santig', 'P.O. Box 814, 3690 Libero. Road', 'Warrnambool', 'VIC', '3155', 'pellen@erateget.org', '(06) 8392 3208'),
+(32104879, 'Melodie', 'Santig', 'P.O. Box 814, 3690 Libero. Road', 'Warrnambool', 'VIC', '3155', '(06) 8392 3208', 'pellen@erateget.org'),
 (32105589, 'Simon', 'Webster', '189-438 Porttitor St.', 'Redlands', 'QLD', '4355', '(06) 9543 7058', 'nascetur.ridiculus.mus@non.co.uk'),
-(32105600, 'Simon', 'Webstr', '189-438 Porttitor St.', 'Redlands', 'QLD', '4355', 'nascet.ridiculus.mus@non.co.uk', '(06) 9543 7054'),
+(32105600, 'Simon', 'Webstr', '189-438 Porttitor St.', 'Redlands', 'QLD', '4355', '(06) 9543 7054', 'nascet.ridiculus.mus@non.co.uk'),
 (32119001, 'Alexander', 'Buchanan', '180 Sodales Av.', 'Maryborough', 'QLD', '4322', '(06) 8184 4006', 'orci.luctus.et@etmagnis.org'),
-(32119006, 'Alexander', 'Buchan', '180 Sodales Av.', 'Maryborough', 'QLD', '4322', 'orci.luctus.et@etmagn.org', '(06) 8184 4007'),
+(32119006, 'Alexander', 'Buchan', '180 Sodales Av.', 'Maryborough', 'QLD', '4322', '(06) 8184 4007', 'orci.luctus.et@etmagn.org'),
 (32120210, 'Cassidy', 'Mccarty', '7487 Malesuada Rd.', 'Kalgoorlie-Boulder', 'WA', '7110', '(01) 8528 6705', 'dapibus.id@facilisiSed.ca'),
-(32120211, 'Casidy', 'Mcarty', '7487 Malesuada Rd.', 'Kalgoorlie-Boulder', 'WA', '7110', 'dapibus.id@faciliSed.ca', '(01) 8528 6700'),
+(32120211, 'Casidy', 'Mcarty', '7487 Malesuada Rd.', 'Kalgoorlie-Boulder', 'WA', '7110', '(01) 8528 6700', 'dapibus.id@faciliSed.ca'),
 (32149163, 'Nicole', 'Travis', 'Ap #482-133 Metus Street', 'Geraldton-Greenough', 'WA', '7021', '(06) 8334 2601', 'mauris.Integer@euultricessit.org'),
-(32149168, 'Nicol', 'Travi', 'Ap #482-133 Metus Street', 'Geraldton-Greenough', 'WA', '7021', 'mauri.Integer@euultricessit.org', '(06) 8334 2602'),
+(32149168, 'Nicol', 'Travi', 'Ap #482-133 Metus Street', 'Geraldton-Greenough', 'WA', '7021', '(06) 8334 2602', 'mauri.Integer@euultricessit.org'),
 (32150961, 'Uma', 'Odonnell', '4052 Vel, Road', 'Darwin', 'NT', '9033', '(06) 9158 5272', 'nibh.vulputate@maurissapien.ca'),
-(32150962, 'Uma', 'Odonnel', '4052 Vel, Road', 'Darwin', 'NT', '9033', 'nib.vulputate@maurissapie.ca', '(06) 9158 5274'),
+(32150962, 'Uma', 'Odonnel', '4052 Vel, Road', 'Darwin', 'NT', '9033', '(06) 9158 5274', 'nib.vulputate@maurissapie.ca'),
 (32158787, 'Cora', 'Nolan', '849-5802 Libero Rd.', 'Gladstone', 'QLD', '4265', '(06) 5732 1955', 'mattis@senectusetnetus.net'),
-(32158788, 'Cora', 'Non', '849-5802 Libero Rd.', 'Gladstone', 'QLD', '4265', 'matti@senectusetnetus.net', '(06) 5732 1956'),
+(32158788, 'Cora', 'Non', '849-5802 Libero Rd.', 'Gladstone', 'QLD', '4265', '(06) 5732 1956', 'matti@senectusetnetus.net'),
 (32158855, 'Kaden', 'Clarke', '3130 Ipsum. Rd.', 'Hervey Bay', 'QLD', '4133', '(08) 3851 1808', 'velit.egestas@Maecenasornare.com'),
-(32158856, 'Kadn', 'Clake', '3130 Ipsum. Rd.', 'Hervey Bay', 'QLD', '4133', 'velit.ege@Maecenasornare.com', '(08) 3851 1809');
+(32158856, 'Kadn', 'Clake', '3130 Ipsum. Rd.', 'Hervey Bay', 'QLD', '4133', '(08) 3851 1809', 'velit.ege@Maecenasornare.com');
 
 -- --------------------------------------------------------
 
@@ -390,7 +351,7 @@ CREATE TABLE `STUDENT_ASSESSMENT` (
   `DateSubmitted` date DEFAULT NULL,
   `DaysExtension` int(11) DEFAULT NULL,
   `MarkAwarded` decimal(5,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `STUDENT_ASSESSMENT`
@@ -613,7 +574,7 @@ CREATE TABLE `TEACHER` (
   `OfficeLocation` varchar(100) DEFAULT NULL,
   `Email` varchar(100) DEFAULT NULL,
   `Phone` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `TEACHER`
@@ -645,7 +606,7 @@ CREATE TABLE `UNIT` (
   `UnitName` varchar(200) NOT NULL,
   `Prerequisites` varchar(100) NOT NULL,
   `Description` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `UNIT`
@@ -715,7 +676,7 @@ CREATE TABLE `UNIT_ENROLMENT` (
   `Session` int(8) NOT NULL,
   `EnrolmentType` varchar(100) NOT NULL,
   `FinalGrade` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `UNIT_ENROLMENT`
@@ -942,7 +903,7 @@ CREATE TABLE `UNIT_OFFERING` (
   `Session` int(8) NOT NULL,
   `UnitAssessorID` int(11) DEFAULT NULL,
   `Locations` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `UNIT_OFFERING`
@@ -1013,7 +974,7 @@ CREATE TABLE `WORKSHOP` (
   `Weekday` varchar(100) DEFAULT NULL,
   `ClassTimeStart` time DEFAULT NULL,
   `ClassTimeEnd` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `WORKSHOP`
@@ -1298,7 +1259,7 @@ INSERT INTO `WORKSHOP` (`WorkshopID`, `UnitOfferingID`, `Campus`, `Location`, `T
 CREATE TABLE `WORKSHOP_ENROLMENT` (
   `WorkshopID` int(8) NOT NULL,
   `StudentID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `WORKSHOP_ENROLMENT`
@@ -1574,185 +1535,101 @@ INSERT INTO `WORKSHOP_ENROLMENT` (`WorkshopID`, `StudentID`) VALUES
 (267, 32100500),
 (268, 32095839);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `ASSESSMENT`
---
 ALTER TABLE `ASSESSMENT`
   ADD PRIMARY KEY (`AssessmentID`),
   ADD UNIQUE KEY `AssessmentID` (`AssessmentID`),
   ADD KEY `ASSESSMENT_UNITOFFERING` (`UnitOfferingID`);
 
---
--- Indexes for table `COURSE`
---
 ALTER TABLE `COURSE`
   ADD PRIMARY KEY (`CourseCode`),
   ADD UNIQUE KEY `CourseCode` (`CourseCode`);
 
---
--- Indexes for table `COURSE_ENROLMENT`
---
 ALTER TABLE `COURSE_ENROLMENT`
   ADD PRIMARY KEY (`StudentID`,`CourseCode`),
   ADD KEY `COURSE_ENROL_CODE` (`CourseCode`);
 
---
--- Indexes for table `STUDENT`
---
 ALTER TABLE `STUDENT`
   ADD PRIMARY KEY (`StudentID`),
   ADD UNIQUE KEY `StudentID` (`StudentID`),
   ADD UNIQUE KEY `Phone` (`Phone`),
   ADD UNIQUE KEY `Email` (`Email`);
 
---
--- Indexes for table `STUDENT_ASSESSMENT`
---
 ALTER TABLE `STUDENT_ASSESSMENT`
   ADD PRIMARY KEY (`AssessmentID`,`StudentID`),
   ADD KEY `ASSESSMENT_STUDENTID` (`StudentID`);
 
---
--- Indexes for table `TEACHER`
---
 ALTER TABLE `TEACHER`
   ADD PRIMARY KEY (`StaffID`),
   ADD UNIQUE KEY `StaffID` (`StaffID`),
   ADD UNIQUE KEY `Email` (`Email`),
   ADD UNIQUE KEY `Phone` (`Phone`);
 
---
--- Indexes for table `UNIT`
---
 ALTER TABLE `UNIT`
   ADD PRIMARY KEY (`UnitCode`),
   ADD UNIQUE KEY `UnitCode` (`UnitCode`);
 
---
--- Indexes for table `UNIT_ENROLMENT`
---
 ALTER TABLE `UNIT_ENROLMENT`
   ADD PRIMARY KEY (`UnitEnrolmentID`),
   ADD UNIQUE KEY `UnitEnrolmentID` (`UnitEnrolmentID`),
   ADD KEY `UNIT_ENROL_STUDENT` (`StudentID`),
   ADD KEY `UNIT_ENROL_OFFER` (`UnitOfferingID`);
 
---
--- Indexes for table `UNIT_OFFERING`
---
 ALTER TABLE `UNIT_OFFERING`
   ADD PRIMARY KEY (`UnitOfferingID`),
   ADD UNIQUE KEY `UnitOfferingID` (`UnitOfferingID`),
   ADD KEY `UNIT_OFFER_CODE` (`UnitCode`),
   ADD KEY `UNIT_OFFER_TEACHER` (`UnitAssessorID`);
 
---
--- Indexes for table `WORKSHOP`
---
 ALTER TABLE `WORKSHOP`
   ADD PRIMARY KEY (`WorkshopID`),
   ADD UNIQUE KEY `WorkshopID` (`WorkshopID`),
   ADD KEY `WORK_UNIT_OFFER` (`UnitOfferingID`),
   ADD KEY `WORKSHOP_TEACHER` (`TeacherID`);
 
---
--- Indexes for table `WORKSHOP_ENROLMENT`
---
 ALTER TABLE `WORKSHOP_ENROLMENT`
   ADD PRIMARY KEY (`WorkshopID`,`StudentID`),
   ADD KEY `WORKSHOP_ENROL_STUDENT` (`StudentID`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `ASSESSMENT`
---
 ALTER TABLE `ASSESSMENT`
   MODIFY `AssessmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
 
---
--- AUTO_INCREMENT for table `TEACHER`
---
 ALTER TABLE `TEACHER`
   MODIFY `StaffID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
---
--- AUTO_INCREMENT for table `UNIT_ENROLMENT`
---
 ALTER TABLE `UNIT_ENROLMENT`
   MODIFY `UnitEnrolmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
 
---
--- AUTO_INCREMENT for table `UNIT_OFFERING`
---
 ALTER TABLE `UNIT_OFFERING`
   MODIFY `UnitOfferingID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
---
--- AUTO_INCREMENT for table `WORKSHOP`
---
 ALTER TABLE `WORKSHOP`
   MODIFY `WorkshopID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=269;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `ASSESSMENT`
---
 ALTER TABLE `ASSESSMENT`
   ADD CONSTRAINT `ASSESSMENT_UNITOFFERING` FOREIGN KEY (`UnitOfferingID`) REFERENCES `UNIT_OFFERING` (`UnitOfferingID`);
 
---
--- Constraints for table `COURSE_ENROLMENT`
---
 ALTER TABLE `COURSE_ENROLMENT`
   ADD CONSTRAINT `COURSE_ENROL_CODE` FOREIGN KEY (`CourseCode`) REFERENCES `COURSE` (`CourseCode`),
   ADD CONSTRAINT `COURSE_ENROL_STUDENT` FOREIGN KEY (`StudentID`) REFERENCES `STUDENT` (`StudentID`);
 
---
--- Constraints for table `STUDENT_ASSESSMENT`
---
 ALTER TABLE `STUDENT_ASSESSMENT`
   ADD CONSTRAINT `ASSESSMENT_STUDENTID` FOREIGN KEY (`StudentID`) REFERENCES `STUDENT` (`StudentID`),
   ADD CONSTRAINT `STUDENT_ASSESSMENT_ASSESSMENTID` FOREIGN KEY (`AssessmentID`) REFERENCES `ASSESSMENT` (`AssessmentID`);
 
---
--- Constraints for table `UNIT_ENROLMENT`
---
 ALTER TABLE `UNIT_ENROLMENT`
   ADD CONSTRAINT `UNIT_ENROL_OFFER` FOREIGN KEY (`UnitOfferingID`) REFERENCES `UNIT_OFFERING` (`UnitOfferingID`),
   ADD CONSTRAINT `UNIT_ENROL_STUDENT` FOREIGN KEY (`StudentID`) REFERENCES `STUDENT` (`StudentID`);
 
---
--- Constraints for table `UNIT_OFFERING`
---
 ALTER TABLE `UNIT_OFFERING`
   ADD CONSTRAINT `UNIT_OFFER_CODE` FOREIGN KEY (`UnitCode`) REFERENCES `UNIT` (`UnitCode`),
   ADD CONSTRAINT `UNIT_OFFER_TEACHER` FOREIGN KEY (`UnitAssessorID`) REFERENCES `TEACHER` (`StaffID`);
 
---
--- Constraints for table `WORKSHOP`
---
 ALTER TABLE `WORKSHOP`
   ADD CONSTRAINT `WORKSHOP_TEACHER` FOREIGN KEY (`TeacherID`) REFERENCES `TEACHER` (`StaffID`),
   ADD CONSTRAINT `WORK_UNIT_OFFER` FOREIGN KEY (`UnitOfferingID`) REFERENCES `UNIT_OFFERING` (`UnitOfferingID`);
 
---
--- Constraints for table `WORKSHOP_ENROLMENT`
---
 ALTER TABLE `WORKSHOP_ENROLMENT`
   ADD CONSTRAINT `WORKSHOP_ENROL_ID` FOREIGN KEY (`WorkshopID`) REFERENCES `WORKSHOP` (`WorkshopID`),
   ADD CONSTRAINT `WORKSHOP_ENROL_STUDENT` FOREIGN KEY (`StudentID`) REFERENCES `STUDENT` (`StudentID`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
